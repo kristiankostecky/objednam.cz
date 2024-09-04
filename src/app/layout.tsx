@@ -17,7 +17,12 @@ const fontSans = FontSans({
   variable: '--font-sans',
 })
 
-const NAVIGATION_LINKS = [{ href: routes.home, label: 'Home' }]
+const NAVIGATION_LINKS = [
+  { href: routes.home, label: 'Home' },
+  { href: routes.clock, label: 'Clock' },
+  { href: routes.star, label: 'Star' },
+  { href: routes.person, label: 'Person' },
+]
 
 export default function RootLayout({
   children,
@@ -28,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'flex min-h-screen w-full flex-col bg-background font-sans antialiased',
+          'flex h-screen min-h-screen w-full flex-col bg-background font-sans antialiased',
           fontSans.variable
         )}
       >

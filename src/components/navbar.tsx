@@ -12,7 +12,7 @@ type LinkEntity = {
 
 export function Navbar({ links }: { links: Array<LinkEntity> }) {
   return (
-    <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
+    <header className="sticky top-0 z-40 flex h-16 min-h-16 items-center gap-4 border-b bg-background px-4 md:px-6">
       <div className="container">
         <nav className="hidden max-w-7xl flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6">
           <Logo />

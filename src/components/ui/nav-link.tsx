@@ -1,6 +1,6 @@
 'use client'
 
-import { useMatchPath } from '@/lib/hooks/match-path'
+import { useMatchPath } from '@/lib/hooks/use-match-path'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import * as React from 'react'
@@ -19,7 +19,7 @@ const NavLink = React.forwardRef<
       ref={ref}
       className={cn(
         {
-          'font-bold': isMatch,
+          'font-bold underline': isMatch,
         },
         className
       )}
