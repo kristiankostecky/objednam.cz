@@ -20,55 +20,6 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-### Supabase
-
-Create supabase account and create a new project. Copy the url and key and create a `.env` file in the root of the project. Replace `PROJECT_REF` with the project reference in [`package.json`](./package.json). Add the following to the file:
-
-```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-```
-
-Initialize supabase and link the project to the database.
-
-```
-npx supabase init
-```
-
-```
-npx supabase link --project-ref ${project-ref}
-```
-
-Generate the types for the supabase client.
-
-```
-npm run supabase:types
-```
-
-Useful commands:
-
-Reset the database (WARNING: This will delete all data in the database):
-
-```
-npm run supabase:db:reset // local db
-npm run supabase:db:reset-linked-project // linked db
-```
-
-Run local supabase server:
-
-```
-npm run supabase:start
-```
-
-#### Issues:
-
-Auth "Auth Unable to connect" - authentication in the app is not working
-Check the project status and logs. If logs show `running db migrations: error executing migrations/20221208132122_backfill_email_last_sign_in_at.up.sql`. Do as described in the discussion [here](https://github.com/orgs/supabase/discussions/20722).
-
-```
-insert into auth.schema_migrations values ('20221208132122');
-```
-
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
