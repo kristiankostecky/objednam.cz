@@ -34,8 +34,10 @@ function formatDate(date: Date): { day: string; date: string } {
 export function DayPicker() {
   const [selectedDate, _setSelectedDate] = useQueryState(QUERY_STATE_KEY.DATE, {
     shallow: false,
+    clearOnDefault: true,
     defaultValue: format(new Date(), STATE_DATE_FORMAT),
   })
+
   const [visibleDates, setVisibleDates] = useState<Array<Date>>(
     getVisibleDates(parse(selectedDate, STATE_DATE_FORMAT, new Date()))
   )
